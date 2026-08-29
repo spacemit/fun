@@ -1,1 +1,116 @@
-와 내 홈페이지 생겼다.
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="쓸데없이 화려하고 정신없는 인터넷 구석">
+  <title>⚠️ 들어오지 마시오 ⚠️</title>
+  <style>
+    :root { --acid:#dfff00; --hot:#ff2bd6; --blue:#00e5ff; --ink:#160026; }
+    * { box-sizing:border-box; }
+    html { cursor:crosshair; }
+    body {
+      margin:0; min-height:100vh; overflow-x:hidden; color:#fff;
+      font-family:"Comic Sans MS","Malgun Gothic",cursive,sans-serif;
+      background:repeating-conic-gradient(from 20deg at 50% 30%,#ff00a8 0 8deg,#6b00ff 8deg 16deg,#00b7ff 16deg 24deg,#ffea00 24deg 32deg);
+      background-size:140px 140px; animation:bg 5s linear infinite;
+    }
+    @keyframes bg { to { background-position:140px 140px; filter:hue-rotate(360deg); } }
+    @keyframes shake { 0%,100%{transform:translate(0) rotate(-1deg)} 25%{transform:translate(4px,-3px) rotate(1deg)} 50%{transform:translate(-3px,2px) rotate(-2deg)} 75%{transform:translate(2px,4px) rotate(2deg)} }
+    @keyframes blink { 50%{opacity:.15} }
+    @keyframes spin { to{transform:rotate(360deg)} }
+    @keyframes bounce { 50%{transform:translateY(-18px) scale(1.12)} }
+
+    .ticker { position:sticky; top:0; z-index:20; padding:9px 0; overflow:hidden; white-space:nowrap; background:#050505; color:var(--acid); border-bottom:5px dashed #fff; font-weight:900; }
+    .ticker span { display:inline-block; padding-left:100%; animation:news 12s linear infinite; }
+    @keyframes news { to{transform:translateX(-100%)} }
+    main { width:min(1000px,94vw); margin:22px auto 80px; text-align:center; }
+    .hero { position:relative; padding:34px 18px; background:rgba(0,0,0,.82); border:9px ridge var(--acid); box-shadow:14px 14px 0 var(--hot),-14px -14px 0 var(--blue); animation:shake .65s infinite; }
+    h1 { margin:0; font-size:clamp(2.5rem,10vw,7rem); line-height:.9; text-shadow:5px 5px #f00,-5px -5px #00f; letter-spacing:-.08em; }
+    .warning { display:inline-block; margin:22px 0 6px; padding:8px 14px; color:#000; background:var(--acid); font-size:clamp(1rem,3vw,1.6rem); font-weight:900; animation:blink .55s step-end infinite; }
+    .counter { margin:20px auto; width:max-content; max-width:100%; padding:10px 18px; background:#000; border:4px inset #aaa; font-family:monospace; font-size:1.15rem; }
+    .button-zone { position:relative; min-height:135px; margin-top:22px; padding:20px; border:5px dotted #fff; background:rgba(255,255,255,.18); }
+    button { border:5px outset #fff; padding:13px 19px; font:900 1rem inherit; cursor:pointer; box-shadow:5px 6px 0 #000; transition:transform .08s; }
+    button:active { transform:translate(5px,6px); box-shadow:none; }
+    #chaos { background:#ffea00; color:#300; font-size:1.25rem; }
+    #runaway { position:absolute; right:10%; bottom:15px; background:#ff3a3a; color:white; }
+    .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
+    .card { min-height:185px; padding:18px; color:#111; border:7px double #111; box-shadow:8px 8px 0 #111; transform:rotate(var(--r)); }
+    .card:nth-child(1){--r:-3deg;background:#60ff85}.card:nth-child(2){--r:2deg;background:#ff8be9}.card:nth-child(3){--r:-1deg;background:#69e8ff}
+    .card .emoji { display:block; font-size:4rem; animation:bounce .7s infinite; }
+    .card:nth-child(2) .emoji{animation:spin 2s linear infinite}.card:nth-child(3) .emoji{animation-delay:.2s}
+    .card h2 { margin:4px 0; text-decoration:underline wavy red; }
+    .marquee { margin:34px 0; padding:12px; overflow:hidden; background:#fff; color:#000; border:8px groove orange; font-size:1.4rem; font-weight:900; white-space:nowrap; }
+    .marquee div { display:inline-block; animation:news 8s linear infinite; padding-left:100%; }
+    footer { padding:25px; background:#111; border-top:7px dashed var(--acid); font-size:.95rem; }
+    .trail { position:fixed; z-index:99; pointer-events:none; font-size:24px; animation:poof .8s forwards; }
+    @keyframes poof { to{transform:translateY(-55px) rotate(180deg) scale(.2);opacity:0} }
+    .party { animation:shake .13s infinite, bg .8s linear infinite !important; }
+    @media (max-width:700px){ .grid{grid-template-columns:1fr}.hero{animation:none}.card{transform:none} }
+    @media (prefers-reduced-motion:reduce){ *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important} }
+  </style>
+</head>
+<body>
+  <div class="ticker"><span>🚨 속보: 이 홈페이지에는 아무런 정보가 없습니다 &nbsp; ★ &nbsp; 방문자 IQ 임시 보관 중 &nbsp; ★ &nbsp; 뒤로 가기 버튼도 당신을 포기했습니다 🚨</span></div>
+  <main>
+    <section class="hero">
+      <h1>인터넷의<br>구석</h1>
+      <p class="warning">⚠️ 의미를 찾으려 하지 마시오 ⚠️</p>
+      <p>안녕하세요. 저는 홈페이지이고, 현재 최선을 다해 <strong>쓸모없습니다.</strong></p>
+      <div class="counter">당신은 <b id="visits">000001</b>번째로 낚인 사람입니다.</div>
+      <div class="button-zone" id="zone">
+        <button id="chaos">🎉 누르면 큰일남</button>
+        <button id="runaway">절대 누르지 마세요</button>
+      </div>
+    </section>
+
+    <div class="marquee"><div>★ 오늘의 명언: 침대는 가구가 아니라 목적지다 ★ 김치볶음밥은 늘 옳다 ★ 월요일 삭제 요청이 반려되었습니다 ★</div></div>
+
+    <section class="grid" aria-label="쓸모없는 정보 모음">
+      <article class="card"><span class="emoji">🦆</span><h2>오늘의 오리</h2><p>꽥이라고 했습니다.<br>추가 질문은 받지 않습니다.</p></article>
+      <article class="card"><span class="emoji">🍕</span><h2>긴급 피자 지수</h2><p>현재 <b>매우 치즈함</b><br>전문가: “한 조각 더”</p></article>
+      <article class="card"><span class="emoji">🧠</span><h2>집중력 현황</h2><p id="focus">측정 중... 잠깐, 뭐였지?</p></article>
+    </section>
+  </main>
+  <footer>© 1997–2099 인터넷의 구석 · 최적 해상도: 눈 감고 보기 · <span id="clock"></span></footer>
+
+  <script>
+    const $ = s => document.querySelector(s);
+    const visits = Number(localStorage.getItem('cornerVisits') || 0) + 1;
+    localStorage.setItem('cornerVisits', visits);
+    $('#visits').textContent = String(visits).padStart(6,'0');
+
+    $('#chaos').addEventListener('click', () => {
+      document.body.classList.toggle('party');
+      const words = ['대혼란 시작!', '왜 눌렀어요!', '🚨 삐용삐용 🚨', '축하합니다(?)', '돌이킬 수 없음'];
+      $('#chaos').textContent = words[Math.floor(Math.random()*words.length)];
+      document.title = '💥 큰일났습니다 💥';
+    });
+
+    const runaway = $('#runaway'), zone = $('#zone');
+    const escape = () => {
+      const maxX = Math.max(0, zone.clientWidth - runaway.offsetWidth - 12);
+      const maxY = Math.max(0, zone.clientHeight - runaway.offsetHeight - 12);
+      runaway.style.left = Math.random()*maxX + 'px';
+      runaway.style.top = Math.random()*maxY + 'px';
+      runaway.style.right = runaway.style.bottom = 'auto';
+    };
+    runaway.addEventListener('pointerenter', escape);
+    runaway.addEventListener('click', () => alert('이걸 누르다니... 손이 빠르시군요.'));
+
+    let last = 0;
+    addEventListener('pointermove', e => {
+      if (Date.now()-last < 65) return; last=Date.now();
+      const el=document.createElement('span'); el.className='trail';
+      el.textContent=['✨','🍌','🐸','💥','⭐'][Math.floor(Math.random()*5)];
+      el.style.left=e.clientX+'px'; el.style.top=e.clientY+'px';
+      document.body.appendChild(el); setTimeout(()=>el.remove(),800);
+    });
+
+    setInterval(() => {
+      $('#focus').textContent = ['집중 중!', '딴생각 중...', '간식 생각 중', '업데이트 실패', '고양이 영상 검색 중'][Math.floor(Math.random()*5)];
+      $('#clock').textContent = '현재 시각: ' + new Date().toLocaleTimeString('ko-KR');
+    },1000);
+  </script>
+</body>
+</html>
